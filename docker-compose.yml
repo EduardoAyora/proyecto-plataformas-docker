@@ -1,0 +1,21 @@
+version: '3.6'
+services:
+  wilfly:
+    build: 
+      context: .
+    ports:
+    - "8080:8080"
+    - "51331:51331"
+    - "51016:51016"
+    depends_on:
+    - "postgres"
+    restart: always
+  postgres:
+    image: postgres:12
+    restart: always
+    volumes:
+    - db_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: postgrespassword
+volumes:
+  db_data:
