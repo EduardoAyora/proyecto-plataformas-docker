@@ -151,7 +151,7 @@
         <subsystem xmlns="urn:jboss:domain:core-management:1.0"/>
         <subsystem xmlns="urn:jboss:domain:datasources:6.0">
             <datasources>
-                <datasource jta="true" jndi-name="java:jboss/datasources/ExampleDS" pool-name="ExampleDS" enabled="true" use-java-context="true" use-ccm="true">
+                <datasource jndi-name="java:jboss/datasources/ExampleDS" pool-name="ExampleDS" enabled="true" use-java-context="true">
                     <connection-url>jdbc:postgresql://localhost:5432/proyecto</connection-url>
                     <driver>postgresql-driver</driver>
                     <security>
@@ -160,9 +160,6 @@
                     </security>
                 </datasource>
                 <drivers>
-                    <driver name="oracle-driver" module="com.oracle">
-                        <driver-class>oracle.jdbc.OracleDriver</driver-class>
-                    </driver>
                     <driver name="postgresql-driver" module="org.postgresql">
                         <driver-class>org.postgresql.Driver</driver-class>
                     </driver>
@@ -558,3 +555,4 @@
         </outbound-socket-binding>
     </socket-binding-group>
 </server>
+
