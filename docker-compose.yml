@@ -10,6 +10,8 @@ services:
     depends_on:
     - "postgres"
     restart: always
+    volumes:
+      - .:/opt/jboss/wildfly/standalone/configuration
   postgres:
     image: postgres:12
     restart: always
